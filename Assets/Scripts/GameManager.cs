@@ -87,21 +87,23 @@ public class GameManager : MonoBehaviour
         List<CellController> neighbours = new List<CellController>();
         foreach (var neighbourPos in neighbourPositions)
         {
-            Vector2Int correctedPos = CorrectPosition(pos + neighbourPos);
-            CellController neighbourCell = cells[correctedPos.x, correctedPos.y];
-            neighbours.Add(neighbourCell);
+            Vector2Int newPos = pos + neighbourPos;
+            bool isCorrectPos = IsCorrectPosition(newPos);
+            if(isCorrectPos) neighbours.Add(cells[newPos.x, newPos.y]);
         }
         return neighbours.ToArray();
     }
 
-    Vector2Int CorrectPosition(Vector2Int pos)
+    bool IsCorrectPosition(Vector2Int pos)
     {
-        Vector2Int correctedPos = pos;
-        if(correctedPos.x >= gridSize.x) correctedPos.x = 0;
-        if(correctedPos.x < 0) correctedPos.x = gridSize.x - 1;
-        if(correctedPos.y >= gridSize.y) correctedPos.y = 0;
-        if(correctedPos.y < 0) correctedPos.y = gridSize.y - 1;
-        return correctedPos;
+        bool isCorrectPos = true;
+        if( (pos.x >= gridSize.x) ||
+            (pos.x < 0)           ||
+            (pos.y >= gridSize.y) ||
+            (pos.y < 0) ) 
+            isCorrectPos = false;
+
+        return isCorrectPos;
     }
 
     int GetNumberOfAliveNeighbours(CellController[] neighbours)
