@@ -4,7 +4,7 @@ Just like the name Implies, this game the 4th of my 5 day challenge of A game a 
 essentially the game is a Conway's game of life replica, which is an application on cellular automata.
 In other words, it's a simulation of cells where their life or death only depend on the neighbouring cells.
 
-## Controlls
+## Controls
 You'll figure it out, no keyboard involved though :"D
 
 ## Installation
