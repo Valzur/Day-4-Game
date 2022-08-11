@@ -13,5 +13,6 @@ Simply download the game from the releases section and run "Day 4 Game.exe",
 or clone the entire repo if you'd like the source code :"D
 
 ## Demo
+Link on [Itch.io](https://valzur.itch.io/day-4-game)
 ![](https://i.ibb.co/9wCDx3r/Optimized-GIF.gif)
 ![Logo](https://i.ibb.co/wWpzTnk/Light-bg-LOGO.png)
